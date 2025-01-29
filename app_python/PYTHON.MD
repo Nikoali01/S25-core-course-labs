@@ -1,0 +1,61 @@
+# Python Web Application: Moscow Time
+
+## Overview
+
+This project is a simple Python web application that displays the current time in Moscow using the **FastAPI** framework. The application serves an HTML page with the current time and an image of Moscow.
+
+---
+
+## Framework Choice: FastAPI
+
+### Why?
+
+1. **Performance**  
+   FastAPI is one of the fastest Python web frameworks, making it ideal for lightweight applications like this one.
+
+2. **Ease of Use**  
+   FastAPI simplifies development with Python type hints and automatic API documentation (Swagger UI and ReDoc).
+
+3. **Asynchronous Support**  
+   Native support for asynchronous programming ensures scalability for future enhancements.
+
+4. **Minimal Boilerplate**  
+   The `/time/moscow` endpoint is implemented with minimal code while maintaining clarity and functionality.
+
+---
+
+## Implementation Details
+
+### Endpoint: `/time/moscow`
+
+- **Purpose**: Displays the current time in Moscow with a simple HTML design.
+- **Logic**:
+  - The `get_location_time` function fetches the current time in the `Europe/Moscow` timezone using the `pytz` library.
+  - The time is dynamically embedded into the HTML response using Python's `f-string`.
+
+### HTML Design
+
+- The HTML page includes:
+  - A bold heading displaying the current time in Moscow.
+  - An image of Moscow for visual appeal.
+  - Basic CSS for centering and responsiveness.
+
+---
+
+## Testing
+
+To ensure the application works as expected:
+
+1. **Manual Testing**  
+   - Access the `/time/moscow` endpoint in your browser and verify that the displayed time updates upon refreshing the page.
+
+2. **Automated Testing**  
+   - Write unit tests to validate the timezone logic and API response.
+
+   Example Test Case:
+   ```python
+   from main import get_location_time
+
+   def test_get_location_time():
+       moscow_time = get_location_time("Europe/Moscow")
+       assert moscow_time.tzname() == "MSK"
