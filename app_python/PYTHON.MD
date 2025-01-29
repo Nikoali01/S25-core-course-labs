@@ -24,6 +24,32 @@ This project is a simple Python web application that displays the current time i
 
 ---
 
+## Best Practices Applied
+
+### 1. Timezone Handling
+- The `pytz` library is used to accurately handle timezone conversions. The timezone is explicitly set to `Europe/Moscow`, ensuring precise and reliable time display.
+
+### 2. Code Organization
+- The code is modular and follows the **Single Responsibility Principle**:
+  - The `get_location_time` function is responsible for fetching the current time in a specified timezone.
+  - The `/time/moscow` endpoint handles HTTP requests and returns the HTML response.
+
+### 3. Coding Standards
+- The code adheres to **PEP 8** guidelines:
+  - Proper indentation, meaningful variable names, and consistent formatting.
+  - Inline comments explain key functionality.
+
+### 4. Error Handling
+- Basic error handling is implemented to manage invalid or unsupported timezones:
+  ```python
+  def get_location_time(region):
+      try:
+          return datetime.now(pytz.timezone(region))
+      except pytz.UnknownTimeZoneError:
+          raise ValueError(f"Invalid timezone: {region}")
+
+---
+
 ## Implementation Details
 
 ### Endpoint: `/time/moscow`

@@ -11,11 +11,15 @@ app = FastAPI(
     title="Region Time API",
     version="0.0.1"
 )
+
 '''
 Function for getting the current time in the specified as the argument region
 '''
 def get_location_time(region):
-    return datetime.now(pytz.timezone(region))
+      try:
+          return datetime.now(pytz.timezone(region))
+      except pytz.UnknownTimeZoneError:
+          raise ValueError(f"Invalid timezone: {region}")
 
 '''
 Endpoint function for getting the current moscow time with some simple html design
