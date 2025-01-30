@@ -57,15 +57,3 @@ The `.dockerignore` file excludes unnecessary files and directories from being i
 ### Principle of Least Privilege
 
 By ensuring the application runs as a non-root user, we follow the principle of least privilege, enhancing security. This means the application has only the minimum level of access required to perform its functions, minimizing the risk of unauthorized access and damage.
-
-## Environment Variables
-
-### Configuration Management
-
-We define environment variables within the Dockerfile to manage configuration settings without hardcoding them into the application. This makes it easier to change configurations without modifying the codebase.
-
-In our Dockerfile, we set an environment variable:
-
-```
-ENV NAME RegionTimeAPI
-```
