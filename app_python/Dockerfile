@@ -14,6 +14,4 @@ COPY ./main.py /app/
 
 EXPOSE 80
 
-ENV NAME RegionTimeAPI
-
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
