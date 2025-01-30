@@ -47,6 +47,7 @@ This project is a simple Python web application that displays the current time i
           return datetime.now(pytz.timezone(region))
       except pytz.UnknownTimeZoneError:
           raise ValueError(f"Invalid timezone: {region}")
+  ```
 
 ---
 
@@ -65,23 +66,3 @@ This project is a simple Python web application that displays the current time i
   - A bold heading displaying the current time in Moscow.
   - An image of Moscow for visual appeal.
   - Basic CSS for centering and responsiveness.
-
----
-
-## Testing
-
-To ensure the application works as expected:
-
-1. **Manual Testing**  
-   - Access the `/time/moscow` endpoint in your browser and verify that the displayed time updates upon refreshing the page.
-
-2. **Automated Testing**  
-   - Write unit tests to validate the timezone logic and API response.
-
-   Example Test Case:
-   ```python
-   from main import get_location_time
-
-   def test_get_location_time():
-       moscow_time = get_location_time("Europe/Moscow")
-       assert moscow_time.tzname() == "MSK"

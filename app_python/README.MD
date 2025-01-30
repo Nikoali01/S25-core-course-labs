@@ -32,15 +32,19 @@ This application serves an HTML page displaying the current time in **Moscow (MS
    git clone https://github.com/Nikoali01/S25-core-course-labs
    git checkout lab1
    cd app_python
+   ```
 
 2. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
+   ```
 
 3. **Run the Application**
    ```bash
    uvicorn main:app --reload
+   ```
 
 4. **Access the Application**
     ```bash
     http://127.0.0.1:8000/time/moscow
+    ```

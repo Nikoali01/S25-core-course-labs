@@ -1,8 +1,12 @@
 # Java Web Application: Random Hex Color Picker
+
 ## Overview
+
 This project is a simple Java web application that generates a random hex color code using the **Spring Boot** framework. The application serves an HTML page displaying the randomly generated color with its corresponding hex code.
+
 ---
 ## Framework Choice: Spring Boot
+
 ### Why?
 1. **Ease of Use**
    - Spring Boot simplifies the setup and development of new Spring applications with minimal configuration.
@@ -12,6 +16,7 @@ This project is a simple Java web application that generates a random hex color 
    - Comes with built-in features like embedded servers, security, metrics, health checks, and externalized configuration.
 4. **Thymeleaf Integration**
    - Thymeleaf provides a modern server-side Java template engine for web and standalone environments, making it ideal for rendering dynamic HTML content.
+   
 ---
 ## Best Practices Applied
 ### 1. Dependency Injection
